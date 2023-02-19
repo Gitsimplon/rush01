@@ -1,25 +1,42 @@
 
-function printBox(width , height)
-{
-var linex = "*";
-var liney = "\n*" ;
-this.largeur = linex;
-this.longeur = liney;
-for (let x = 0; x < width; x++) {
-    this.largeur += linex;
+function printBox(width, height) {
+  let coin = "*";
+  let horizontal = "*";
+  let vertical = "*";
+  let pattern = "";
+  let isCoin = false;
+
+  for (let i = 0; i < height; i++) {
+    for (let j = 0; j < width; j++) {
+
+      isCoin = (i === 0 && j === 0) || (i === 0 && j === width - 1)
+        || (i === height - 1 && j === 0) || (i === height - 1 && j === width - 1);
+
+      if (isCoin) {
+        pattern += coin;
+      } else if (i === 0 || i === height - 1) {
+        pattern += horizontal;
+      }
+
+      if (j === width - 2 && i > 0 && i < height - 1)
+        pattern += vertical;
+      else if (i > 0 && i < height - 1)
+        pattern += ' ';
+
+    }
+
+    if (i !== height - 1) {
+      pattern += "\n";
+      if (i !== height - 2)
+        pattern += vertical;
+    }
+
+  }
+
+  console.log(pattern);
+
 }
 
-for (let y = 0; y < height; y++) {
-    
-    this.longeur += liney;
-    
-}
+printBox(6, 5);
 
-var cotex = largeur +longeur;
-var cotey = longeur + largeur;
-
-var Box = cotex + cotey;
-console.log(cotex + largeur);
-
-}
-printBox(8,1);
+module.exports = printBox;
