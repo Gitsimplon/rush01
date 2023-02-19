@@ -1,5 +1,3 @@
-
-
 function treeConstructor(strArr) {
   const parents = {};
   const children = {};
