@@ -1,14 +1,13 @@
-var a = 2;
 
-function displayCaracter( n){
-var caracter = new Array("A","B","C");
+function displayCaracter(n) {
+  let evenLetter = "";
+  for (let i = 1; i <= n; i++) {
+    evenLetter = (i % 4 === 0) ? "C" : "B";
+    console.log((i % 2 === 1) ? "A" : evenLetter);
+  }
 
-var tester = n%2;
-if( tester != 0){
-    
-}else{
-    console.log(caracter[1]);
 }
-    caracter.ra
-}
-displayCaracter(a);
+
+displayCaracter(10);
+
+module.exports = displayCaracter;
