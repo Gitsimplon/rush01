@@ -20,11 +20,9 @@ function treeConstructor(strArr) {
       children[child] = parent;
     }
   }
-
-  return true;
 }
 
-console.log(TreeConstructor(["(1,2)", "(2,4)", "(5,7)", "(7,2)", "(9,5)"]));
-console.log(TreeConstructor(["(1,2)", "(3,2)", "(2,12)", "(5,2)"]));
+console.log(treeConstructor(["(1,2)", "(2,4)", "(5,7)", "(7,2)", "(9,5)"]));
+console.log(treeConstructor(["(1,2)", "(3,2)", "(2,12)", "(5,2)"]));
 
 module.exports = treeConstructor;
