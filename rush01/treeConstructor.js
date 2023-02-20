@@ -20,6 +20,7 @@ function treeConstructor(strArr) {
       children[child] = parent;
     }
   }
+return true;
 }
 
 console.log(treeConstructor(["(1,2)", "(2,4)", "(5,7)", "(7,2)", "(9,5)"]));
